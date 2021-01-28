@@ -1,15 +1,9 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
 // import {TicketContext} from './App'
 import {Redirect} from 'react-router-dom'
 
 const NewAgent = () => {
-
-    // const {ticketValue, contactValue, agentValue} = useContext(TicketContext);
-
-    // const [tickets, setTickets] = ticketValue;
-    // const [contacts, setContacts] = contactValue;
-    // const [agents, setAgents] = agentValue;
 
     const [redir, setRedir] = useState(false);
 
@@ -48,16 +42,16 @@ const NewAgent = () => {
             <Form.Group controlId="role">
                 <Form.Label>Role</Form.Label>
                 <Form.Control as="select" name='role'>
-                    {role.map((st) => 
-                        <option>{st}</option>
+                    {role.map((st, index) => 
+                        <option key={index}>{st}</option>
                     )}
                 </Form.Control>
             </Form.Group>
             <Form.Group controlId="type">
                 <Form.Label>Type</Form.Label>
                 <Form.Control as="select" name='type'>
-                    {type.map((st) => 
-                        <option>{st}</option>
+                    {type.map((st, index) => 
+                        <option key={index}>{st}</option>
                     )}
                 </Form.Control>
             </Form.Group>

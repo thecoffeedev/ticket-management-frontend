@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import TicketIcon from './ticketIcons.jsx';
 import {TicketContext} from './App'
 import mail from '../assets/images/mail.png';
@@ -9,8 +9,8 @@ const TicketCards = (props) => {
     const {ticketValue, contactValue, agentValue} = useContext(TicketContext);
 
     const [tickets, setTickets] = ticketValue;
-    const [contacts, setContacts] = contactValue;
-    const [agents, setAgents] = agentValue;
+    const [contacts] = contactValue;
+    const [agents] = agentValue;
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -54,12 +54,11 @@ const TicketCards = (props) => {
                     </div>
                     <div className='ml-3'>
                         <img className='d-inline-block' src={mail} alt='contact' width='24px' />
-                        {console.log()}
                         <h5 className='d-inline-block ml-3' style={{fontWeight: 'normal'}}>{capitalizeFirstLetter(contacts.filter((data) => data._id === ticket.contact)[0].name)}</h5><br />
                         <img className='d-inline-block' src={clock} alt='clock' width='24px' />
                         <h5 className='d-inline-block ml-3' style={{fontWeight: 'normal'}}>{returnDate(ticket.created_at)}</h5>
                     </div>
-                    <div key={ticket._id} className=' select-div m-3'>
+                    <div className=' select-div m-3'>
                         <form>
                             <label htmlFor='priority'>Priority : </label>
                             <select className='select-items bg-light form-control' id='priority' defaultValue={ticket.priority} onChange={(e) => setTickets([...tickets].map((data) => data._id === ticket._id ? {...data, priority : e.target.value} : data ))}>

@@ -22,9 +22,9 @@ const Header = (props) => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item><Link className='nav-links' to='/newTicket'>Ticket</Link></Dropdown.Item>
-                        <Dropdown.Item><Link className='nav-links' to='/newAgent'>Agent</Link></Dropdown.Item>
-                        <Dropdown.Item><Link className='nav-links' to='/newContact'>Contact</Link></Dropdown.Item>
+                        <Dropdown.Item as={Link} className='nav-links' to='/newTicket'>Ticket</Dropdown.Item>
+                        <Dropdown.Item as={Link} className='nav-links' to='/newAgent'>Agent</Dropdown.Item>
+                        <Dropdown.Item as={Link} className='nav-links' to='/newContact'>Contact</Dropdown.Item>
                         {/* <Dropdown.Item href="#/action-2">Agent</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Contact</Dropdown.Item> */}
                     </Dropdown.Menu>

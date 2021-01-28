@@ -5,10 +5,10 @@ import {Redirect} from 'react-router-dom'
 
 const NewTicket = () => {
 
-    const {ticketValue, contactValue, agentValue} = useContext(TicketContext);
+    const {contactValue, agentValue} = useContext(TicketContext);
 
-    const [contacts, setContacts] = contactValue;
-    const [agents, setAgents] = agentValue;
+    const [contacts] = contactValue;
+    const [agents] = agentValue;
 
     const [redir, setRedir] = useState(false)
 
@@ -49,23 +49,23 @@ const NewTicket = () => {
                 <Form.Label>Contact</Form.Label>
                 <Form.Control as="select" name="contact">
                     {contacts.map((contact) => 
-                        <option value={contact._id}>{contact.name}</option>
+                        <option key={contact._id} value={contact._id}>{contact.name}</option>
                     )}
                 </Form.Control>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect2">
                 <Form.Label>Type</Form.Label>
                 <Form.Control as="select" name='type'>
-                    {type.map((type) => 
-                        <option>{type}</option>
+                    {type.map((type, index) => 
+                        <option key={index}>{type}</option>
                     )}
                 </Form.Control>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect3">
                 <Form.Label>Status</Form.Label>
                 <Form.Control as="select" name='status'>
-                    {status.map((st) => 
-                        <option>{st}</option>
+                    {status.map((st, index) => 
+                        <option key={index}>{st}</option>
                     )}
                 </Form.Control>
             </Form.Group>
@@ -73,15 +73,15 @@ const NewTicket = () => {
                 <Form.Label>Agent</Form.Label>
                 <Form.Control as="select" name='agent'>
                     {agents.map((agent) =>
-                        <option value={agent._id}>{agent.name}</option>
+                        <option key={agent._id} value={agent._id}>{agent.name}</option>
                     )}
                 </Form.Control>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect4">
                 <Form.Label>Priority</Form.Label>
                 <Form.Control as="select" name='priority'>
-                    {priority.map((priority) =>
-                        <option>{priority}</option>
+                    {priority.map((priority, index) =>
+                        <option key={index}>{priority}</option>
                     )}
                 </Form.Control>
             </Form.Group>

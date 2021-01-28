@@ -29,82 +29,23 @@ function App(props) {
     })
   }
 
-  const getContacts = () => {
+  const getContacts = (fn) => {
     fetch(`${url}/contacts`)
     .then((res) => res.json())
     .then((res) => {
       setContacts(res.result);
+      fn();
     })
   }
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-  const agentData = [{
-    _id: '1',
-    name: 'Sam',
-    email: 'agent@mail.com',
-    role: 'agent',
-    type: 'full-time'
-  },
-  {
-    _id: '2',
-    name: 'jelly',
-    email: 'agent@mail.com',
-    role: 'agent',
-    type: 'Occational'
-  },
-  {
-    _id: '3',
-    name: 'John',
-    email: 'killbill@mail.com',
-    role: 'agent',
-    type: 'full-time'
-  }]
-
-  const contactsData = [{
-    _id: '1',
-    name: 'contact-1',
-    email: 'contact@mail.com'
-  },{
-    _id: '2',
-    name: 'contact-2',
-    email: 'contact2@mail.com'
-  }]
-
-  const ticketData = [{
-    _id: '1',
-    contact: '1',
-    subject: 'can you show me how to use a pen with safety pin?',
-    type: 'order',
-    status: 'open',
-    priority: 'medium',
-    agent: '1',
-    created_at: 'jan 1 2020',
-    description: 'this is a description. This description describes everything which is more conserned and doable'
-  },
-  {
-    _id: '2',
-    contact: '2',
-    subject: 'How the sales chart is plotted?',
-    type: 'order',
-    status: 'closed',
-    priority: 'urgent',
-    agent: '2',
-    created_at: 'jan 1 2020',
-    description: 'this is a description. This description describes everything which is more conserned and doable'
-  }]
-
-  useEffect(() => {
-    getContacts();
+  
+  useEffect(() => { 
+    getContacts(getTickets);
     getAgents();
-    if (agents && contacts){
-      getTickets();
-    }
-    // setTickets(ticketData);
-    // setAgents(agentData);
-    // setContacts(contactsData);
+    // getTickets();
   }, [])
 
   return (
@@ -116,7 +57,7 @@ function App(props) {
       </div>
       <div className='mainContent'>
         <TicketContext.Provider value={{ticketValue: [tickets, setTickets], contactValue: [contacts, setContacts], agentValue: [agents, setAgents]}}>
-          <BodyWindow agents = {agentData} ticket={ticketData} contact={contactsData} page={props.page} />
+          <BodyWindow page={props.page} />
         </TicketContext.Provider>
       </div>
     </div>

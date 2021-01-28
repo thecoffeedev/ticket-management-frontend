@@ -4,11 +4,8 @@ import ContactIcon from './contactIcons'
 
 const ContactCards = () => {
 
-    const {ticketValue, contactValue, agentValue} = useContext(TicketContext);
-
-    const [tickets, setTickets] = ticketValue;
-    const [contacts, setContacts] = contactValue;
-    const [agents, setAgents] = agentValue;
+    const {contactValue} = useContext(TicketContext);
+    const [contacts] = contactValue;
 
     return (
         <div className='text-center'>

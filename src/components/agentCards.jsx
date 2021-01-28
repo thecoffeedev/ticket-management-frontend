@@ -3,11 +3,9 @@ import { TicketContext } from "./App";
 import AgentIcon from "./agentIcons";
 
 const AgentCards = () => {
-  const { ticketValue, contactValue, agentValue } = useContext(TicketContext);
+  const { agentValue } = useContext(TicketContext);
 
-  const [tickets, setTickets] = ticketValue;
-  const [contacts, setContacts] = contactValue;
-  const [agents, setAgents] = agentValue;
+  const [agents] = agentValue;
 
   return (
     <div className="text-center">

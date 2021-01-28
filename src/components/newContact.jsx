@@ -1,19 +1,8 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
-import {TicketContext} from './App'
 import {Redirect} from 'react-router-dom'
 
 const NewContact = () => {
-
-    // const {ticketValue, contactValue, agentValue} = useContext(TicketContext);
-
-    // const [tickets, setTickets] = ticketValue;
-    // const [contacts, setContacts] = contactValue;
-    // const [agents, setAgents] = agentValue;
-
-    // const type = ['question', 'incident', 'problem', 'feature request', 'refunds & returns', 'order'];
-    // const status = ['open', 'pending', 'closed', 'waiting on customer']
-    // const priority = ['low', 'medium', 'high', 'urgent']
 
     const [redir, setRedir] = useState(false)
 
