@@ -21,7 +21,7 @@ const NewTicket = () => {
         const formData = new FormData(e.target),
               formDataObj = Object.fromEntries(formData.entries())
         console.log(formDataObj)
-        fetch('https://ticket-mg.netlify.app/add-ticket', {
+        fetch('https://ticketmg.herokuapp.com/add-ticket', {
             method: "POST",
             headers: {
                 'Access-Control-Allow-Origin': '*',

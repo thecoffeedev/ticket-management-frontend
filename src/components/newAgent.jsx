@@ -14,7 +14,7 @@ const NewAgent = () => {
         e.preventDefault()
         const formData = new FormData(e.target),
               formDataObj = Object.fromEntries(formData.entries())
-        fetch('https://ticket-mg.netlify.app/new-agent', {
+        fetch('https://ticketmg.herokuapp.com/new-agent', {
             method: 'POST',
             headers: {
                 'Access-Control-Allow-Origin': '*',
