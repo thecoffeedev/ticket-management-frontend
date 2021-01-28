@@ -11,7 +11,7 @@ function App(props) {
   const [contacts, setContacts] = useState([])
 
 
-  const url = 'https://ticketmg.herokuapp.com/';
+  const url = 'https://ticketmg.herokuapp.com';
   
   const getTickets = () => {
     fetch(`${url}/tickets`, {
