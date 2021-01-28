@@ -14,7 +14,11 @@ function App(props) {
   const url = 'https://ticket-mg.netlify.app';
   
   const getTickets = () => {
-    fetch(`${url}/tickets`)
+    fetch(`${url}/tickets`, {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
     .then((res) => res.json())
     .then(res => {
       setTickets(res.result)
@@ -22,7 +26,11 @@ function App(props) {
   }
 
   const getAgents = () => {
-    fetch(`${url}/agents`)
+    fetch(`${url}/agents`, {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
     .then((res) => res.json())
     .then(res => {
       setAgents(res.result)
@@ -30,7 +38,11 @@ function App(props) {
   }
 
   const getContacts = (fn) => {
-    fetch(`${url}/contacts`)
+    fetch(`${url}/contacts`, {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
     .then((res) => res.json())
     .then((res) => {
       setContacts(res.result);

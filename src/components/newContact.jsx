@@ -13,6 +13,7 @@ const NewContact = () => {
         fetch('https://ticket-mg.netlify.app/new-contact', {
             method: 'POST',
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formDataObj)

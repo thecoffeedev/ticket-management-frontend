@@ -17,6 +17,7 @@ const NewAgent = () => {
         fetch('https://ticket-mg.netlify.app/new-agent', {
             method: 'POST',
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formDataObj)

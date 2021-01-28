@@ -24,6 +24,7 @@ const NewTicket = () => {
         fetch('https://ticket-mg.netlify.app/add-ticket', {
             method: "POST",
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formDataObj)
