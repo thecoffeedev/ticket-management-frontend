@@ -21,7 +21,7 @@ const NewTicket = () => {
         const formData = new FormData(e.target),
               formDataObj = Object.fromEntries(formData.entries())
         console.log(formDataObj)
-        fetch('http://localhost:5500/add-ticket', {
+        fetch('https://ticket-mg.netlify.app/add-ticket', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

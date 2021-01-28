@@ -11,7 +11,7 @@ function App(props) {
   const [contacts, setContacts] = useState([])
 
 
-  const url = 'http://localhost:5500';
+  const url = 'https://ticket-mg.netlify.app';
   
   const getTickets = () => {
     fetch(`${url}/tickets`)

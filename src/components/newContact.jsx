@@ -10,7 +10,7 @@ const NewContact = () => {
         e.preventDefault()
         const formData = new FormData(e.target),
               formDataObj = Object.fromEntries(formData.entries())
-        fetch('http://localhost:5500/new-contact', {
+        fetch('https://ticket-mg.netlify.app/new-contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -14,7 +14,7 @@ const NewAgent = () => {
         e.preventDefault()
         const formData = new FormData(e.target),
               formDataObj = Object.fromEntries(formData.entries())
-        fetch('http://localhost:5500/new-agent', {
+        fetch('https://ticket-mg.netlify.app/new-agent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
